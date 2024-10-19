@@ -1,0 +1,24 @@
+{
+    "games": [
+        {
+            "name": "40 Mega Clove",
+            "percentage": 61
+        },
+        {
+            "name": "40 Shining Crown",
+            "percentage": 47
+        },
+        {
+            "name": "20 Burning Hot",
+            "percentage": 48
+        },
+        {
+            "name": "40 Clover Hit",
+            "percentage": 32
+        },
+        {
+            "name": "5 Clover Hit",
+            "percentage": 29
+        }
+    ]
+}

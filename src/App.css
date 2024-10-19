@@ -1,5 +1,58 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#root{
+  width: 100%;
+}
+
+.container {
+  background: white;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.login-button,
+.logout-button {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover,
+.logout-button:hover {
+  background-color: #357ae8;
+}
+
+.user-container {
+  display: flex;
+ flex-direction: column;
+  align-items: center;
+}
+
+.login-container {
+  display: flex;
+ flex-direction: column;
+  align-items: center;
 }
 
 .App-logo {
@@ -26,6 +79,20 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.slot-machine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  border: 2px solid #000;
+  width: 200px;
+  overflow: hidden;
+  position: relative;
 }
 
 @keyframes App-logo-spin {
