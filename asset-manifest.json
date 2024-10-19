@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/betseer/static/css/main.65d322ac.css",
-    "main.js": "/betseer/static/js/main.d0a776be.js",
+    "main.css": "/betseer/static/css/main.46e77f17.css",
+    "main.js": "/betseer/static/js/main.565a9127.js",
     "static/js/453.ad6eb26e.chunk.js": "/betseer/static/js/453.ad6eb26e.chunk.js",
+    "static/media/logo1.png": "/betseer/static/media/logo1.7f2efb68bb5d3f4f619a.png",
     "index.html": "/betseer/index.html",
-    "main.65d322ac.css.map": "/betseer/static/css/main.65d322ac.css.map",
-    "main.d0a776be.js.map": "/betseer/static/js/main.d0a776be.js.map",
+    "main.46e77f17.css.map": "/betseer/static/css/main.46e77f17.css.map",
+    "main.565a9127.js.map": "/betseer/static/js/main.565a9127.js.map",
     "453.ad6eb26e.chunk.js.map": "/betseer/static/js/453.ad6eb26e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.65d322ac.css",
-    "static/js/main.d0a776be.js"
+    "static/css/main.46e77f17.css",
+    "static/js/main.565a9127.js"
   ]
 }
