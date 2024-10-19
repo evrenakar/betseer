@@ -3,11 +3,13 @@ import { auth, provider, signInWithPopup } from "./firebase";
 import { TypeAnimation } from "react-type-animation";
 import "./App.css";
 import data from "./data.json";
+import Logo from "./assets/logo1.png";
 
 function App() {
   const [user, setUser] = useState(null);
   const [gameData, setGameData] = useState(data);
   const [selectedGame, setSelectedGame] = useState(null);
+  const [disabled, setDisabled] = useState(false);
   const tokenExpiryTime = 15 * 60 * 1000; // 15 dakika = 15 * 60 * 1000 ms
 
   // Google ile giriş fonksiyonu
@@ -26,6 +28,7 @@ function App() {
       });
   };
   const handleRandomGame = () => {
+    setDisabled(true);
     const randomIndex = Math.floor(Math.random() * gameData.games.length); // Rastgele bir oyun seç
     setSelectedGame(gameData.games[randomIndex]); // Animasyonu durdur
   };
@@ -47,7 +50,7 @@ function App() {
   const checkAndAdjustPercentages = () => {
     const lastUpdateTime = localStorage.getItem("lastUpdateTime");
     const now = new Date().getTime();
-    const twentyFourHours = 10000; // 24 saat = 86400000 ms
+    const twentyFourHours = 86400000; // 24 saat = 86400000 ms
 
     // Eğer son güncelleme 24 saatten eskiyse yüzdelikleri güncelle ve zamanı localStorage'a kaydet
     if (!lastUpdateTime || now - lastUpdateTime > twentyFourHours) {
@@ -75,35 +78,36 @@ function App() {
   console.log(selectedGame);
   return (
     <div className="container">
+      <img width={360} src={Logo} className="logo" alt="Logo" />
       {user ? (
         <div className="user-container">
           <h2>Merhaba, {user.displayName}!</h2>
-          <img src={user.photoURL} alt="Profile" />
-          <button onClick={handleRandomGame}>Şansını Dene!</button>
-          <div className="slot-item">
+          {/* <img src={user.photoURL} alt="Profile" /> */}
+          <button className="login-button" onClick={handleRandomGame} disabled={disabled}>Şansını Dene!</button>
+          {selectedGame && <div className="slot-item">
             <span className="spin">
-              {selectedGame && <TypeAnimation
+              <TypeAnimation
                 sequence={[
                   selectedGame.name, // Types 'One'
                   1000,
-                  `${selectedGame.name} %${selectedGame.percentage}`,// Deletes 'One' and types 'Two'
-                  1000, // Types 'Three' without deleting 'Two'
+                  `${selectedGame.name} / Şansın: %${selectedGame.percentage}`,// Deletes 'One' and types 'Two'
                   () => {
-                    console.log("Sequence completed");
+                    setDisabled(false);
                   },
                 ]}
                 wrapper="span"
-                style={{ fontSize: "2em", display: "inline-block" }}
+                style={{ fontSize: "1.5em", display: "inline-block" }}
                 repeat={false}
                 cursor={false}
                 key={selectedGame.name}
-              />}
+              />
             </span>
-          </div>
+          </div>}
+          <p className="info">Buradaki verilerin tamamı casinolardaki müşteri sayıları ve kazanma oranlarına göre tahmin edilmektedir.</p>
         </div>
       ) : (
         <div className="login-container">
-          <h2>Oranları görmek için giriş yapın</h2>
+          <h2>Kazanma İhtimalini Görmek İçin</h2>
           <button className="login-button" onClick={signInWithGoogle}>
             Giriş Yap
           </button>

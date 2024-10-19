@@ -6,8 +6,8 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  color: #333;
+  background:#010217;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,16 +19,20 @@ body {
 }
 
 .container {
-  background: white;
+  background: #010217;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h2 {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-size: 20px;
 }
 
 .login-button,
 .logout-button {
-  background-color: #4285f4;
+  background-color: #D449B7;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -36,22 +40,44 @@ h2 {
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s;
+  font-weight: bold;
+  margin-bottom: 30px;
 }
 
-.login-button:hover,
-.logout-button:hover {
-  background-color: #357ae8;
+.login-button:disabled {
+  background-color: gray;
+}
+
+.slot-item{
+  margin-bottom: 30px;
+  background-color: #D449B7;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+.info{
+  text-align: center;
+  font-size: 10px;
+  padding: 0 40px;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
 .user-container {
   display: flex;
- flex-direction: column;
+  flex-direction: column;
   align-items: center;
 }
 
 .login-container {
   display: flex;
- flex-direction: column;
+  flex-direction: column;
   align-items: center;
 }
 
