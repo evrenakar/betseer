@@ -79,7 +79,7 @@ function App() {
         <div className="user-container">
           <h2>Merhaba, {user.displayName}!</h2>
           <img src={user.photoURL} alt="Profile" />
-          <button onClick={handleRandomGame}>Çevir</button>
+          <button onClick={handleRandomGame}>Şansını Dene!</button>
           <div className="slot-item">
             <span className="spin">
               {selectedGame && <TypeAnimation
@@ -87,15 +87,16 @@ function App() {
                   selectedGame.name, // Types 'One'
                   1000,
                   `${selectedGame.name} %${selectedGame.percentage}`,// Deletes 'One' and types 'Two'
-                  2000, // Types 'Three' without deleting 'Two'
+                  1000, // Types 'Three' without deleting 'Two'
                   () => {
                     console.log("Sequence completed");
                   },
                 ]}
                 wrapper="span"
                 style={{ fontSize: "2em", display: "inline-block" }}
-                repeat={1}
+                repeat={false}
                 cursor={false}
+                key={selectedGame.name}
               />}
             </span>
           </div>
